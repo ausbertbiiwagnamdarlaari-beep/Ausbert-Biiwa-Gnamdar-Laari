@@ -1,6 +1,6 @@
 import React from 'react';
-import { AUSBERT_CONFIG, INITIAL_QUALIFICATIONS } from '../config';
-import { Award, CheckCircle2, MapPin, Sparkles } from 'lucide-react';
+import { AUSBERT_CONFIG, INITIAL_QUALIFICATIONS, BRAND_LOGOS } from '../config';
+import { Award, CheckCircle2, MapPin, Sparkles, Check } from 'lucide-react';
 
 export const About: React.FC = () => {
   return (
@@ -13,7 +13,7 @@ export const About: React.FC = () => {
             <Sparkles className="w-3.5 h-3.5" />
             <span>About Ausbert</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-display">
             Digital Creative & Service Provider in Tamale
           </h2>
         </div>
@@ -21,11 +21,36 @@ export const About: React.FC = () => {
         {/* About Card & Qualifications Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* Confident Bio Column */}
+          {/* Confident Bio Column with Headshot */}
           <div className="lg:col-span-6 bg-slate-950/80 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-6 shadow-xl">
-            <h3 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
-              <span>Helping Local Businesses Stand Out</span>
-            </h3>
+            
+            {/* Creator Profile Header */}
+            <div className="flex items-center gap-4 pb-4 border-b border-slate-800/80">
+              <div className="relative">
+                <img
+                  src={AUSBERT_CONFIG.PROFILE_IMAGE_URL || BRAND_LOGOS.ICON_MARK}
+                  alt={AUSBERT_CONFIG.NAME}
+                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover object-top border-2 border-amber-500/40 shadow-lg"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-emerald-500 border-2 border-slate-950 rounded-full flex items-center justify-center text-[10px] text-white">
+                  <Check className="w-3 h-3 stroke-[3]" />
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold text-white font-display">
+                  {AUSBERT_CONFIG.NAME}
+                </h3>
+                <p className="text-xs sm:text-sm text-amber-400 font-medium">
+                  {AUSBERT_CONFIG.TITLE}
+                </p>
+                <p className="text-xs text-slate-400 flex items-center gap-1 mt-0.5">
+                  <MapPin className="w-3.5 h-3.5 text-amber-400" />
+                  <span>{AUSBERT_CONFIG.LOCATION}</span>
+                </p>
+              </div>
+            </div>
 
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal border-l-4 border-amber-500 pl-4 py-1">
               "{AUSBERT_CONFIG.ABOUT_TEXT}"

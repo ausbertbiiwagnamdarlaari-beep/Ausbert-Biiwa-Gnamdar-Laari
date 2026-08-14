@@ -95,18 +95,18 @@ export const Hero: React.FC = () => {
             <div className="relative w-full max-w-sm sm:max-w-md">
               
               {/* Outer Glowing Decorative Border */}
-              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-amber-500/30 via-emerald-500/20 to-indigo-500/30 blur-lg opacity-70 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
+              <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-tr from-amber-500/30 via-emerald-500/20 to-indigo-500/30 blur-xl opacity-75 group-hover:opacity-100 transition duration-700" />
 
               {/* Main Card Container */}
-              <div className="relative bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-2xl space-y-6">
+              <div className="relative bg-slate-900/90 border border-slate-800/90 rounded-2xl p-4 sm:p-5 shadow-2xl space-y-4 backdrop-blur-sm">
                 
-                {/* Official Brand Logo / Profile Frame */}
-                <div className="relative aspect-square rounded-2xl bg-slate-950 border border-slate-800 overflow-hidden flex flex-col items-center justify-center group shadow-xl">
+                {/* Official Portrait Frame */}
+                <div className="relative aspect-[4/5] rounded-xl bg-slate-950 border border-slate-800 overflow-hidden flex flex-col items-center justify-center group shadow-xl">
                   {AUSBERT_CONFIG.PROFILE_IMAGE_URL ? (
                     <img
                       src={AUSBERT_CONFIG.PROFILE_IMAGE_URL}
                       alt={AUSBERT_CONFIG.NAME}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-700 ease-out"
                       referrerPolicy="no-referrer"
                     />
                   ) : (
@@ -120,22 +120,42 @@ export const Hero: React.FC = () => {
                     </div>
                   )}
 
+                  {/* Gradient overlay for contrast */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/10 to-transparent pointer-events-none" />
+
+                  {/* Top Floating Mini Brand Mark */}
+                  <div className="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md border border-slate-800 p-1.5 rounded-xl flex items-center gap-2 shadow-lg">
+                    <img
+                      src={BRAND_LOGOS.ICON_MARK}
+                      alt="Brand Mark"
+                      className="w-6 h-6 object-contain rounded-lg"
+                      referrerPolicy="no-referrer"
+                    />
+                    <span className="text-[11px] font-bold text-white pr-2 tracking-tight">Ausbert Biiwa</span>
+                  </div>
+
                   {/* Creative Badge Tag */}
-                  <div className="absolute bottom-3 right-3 bg-slate-950/90 backdrop-blur-md border border-slate-800 text-amber-400 text-[11px] font-bold px-3 py-1 rounded-lg flex items-center gap-1.5 shadow-lg">
-                    <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
-                    <span>Official Brand Logo</span>
+                  <div className="absolute bottom-3 left-3 right-3 bg-slate-950/90 backdrop-blur-md border border-slate-800/90 text-amber-400 p-2.5 rounded-xl flex items-center justify-between shadow-lg">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                      <span className="text-xs font-bold text-white tracking-wide">Ausbert B. G. Laari</span>
+                    </div>
+                    <div className="flex items-center gap-1 text-[11px] font-semibold text-amber-400">
+                      <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
+                      <span>Tamale, Ghana</span>
+                    </div>
                   </div>
                 </div>
 
                 {/* Quick Info Footer Bar inside Card */}
-                <div className="grid grid-cols-2 gap-3 pt-1 border-t border-slate-800/80 text-center">
-                  <div className="bg-slate-950/60 p-2.5 rounded-lg border border-slate-800">
-                    <span className="block text-amber-400 font-bold text-sm">Targeted</span>
-                    <span className="block text-[11px] text-slate-300">For Local Businesses</span>
+                <div className="grid grid-cols-2 gap-2.5 pt-1 text-center">
+                  <div className="bg-slate-950/80 p-2.5 rounded-xl border border-slate-800">
+                    <span className="block text-amber-400 font-bold text-xs sm:text-sm">Digital Creative</span>
+                    <span className="block text-[11px] text-slate-300">Web, Graphics & Video</span>
                   </div>
-                  <div className="bg-slate-950/60 p-2.5 rounded-lg border border-slate-800">
-                    <span className="block text-emerald-400 font-bold text-sm">Direct Contact</span>
-                    <span className="block text-[11px] text-slate-300">WhatsApp & Email</span>
+                  <div className="bg-slate-950/80 p-2.5 rounded-xl border border-slate-800">
+                    <span className="block text-emerald-400 font-bold text-xs sm:text-sm">Direct Contact</span>
+                    <span className="block text-[11px] text-slate-300">Fast WhatsApp Reply</span>
                   </div>
                 </div>
 

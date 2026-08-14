@@ -1,6 +1,9 @@
 import { ServiceItem, PortfolioItem, QualificationItem } from './types';
 import logoDarkUrl from './assets/images/ausbert_logo_dark_1786629083487.jpg';
 import logoIconUrl from './assets/images/ausbert_logo_icon_1786629099891.jpg';
+import portraitUrl from './assets/images/ausbert_studio_bg_1786701759708.jpg';
+import portraitLuxuryUrl from './assets/images/ausbert_luxury_bg_1786701774020.jpg';
+import avatarUrl from './assets/images/ausbert_avatar_1786700836781.jpg';
 
 /**
  * =========================================================================
@@ -10,12 +13,17 @@ import logoIconUrl from './assets/images/ausbert_logo_icon_1786629099891.jpg';
  * All areas marked with comments are easy to customize!
  */
 
-// --- BRAND LOGO ASSETS ---
+// --- BRAND LOGO & PROFILE ASSETS ---
 export const BRAND_LOGOS = {
   // Official Dark Emblem Logo
   DARK_EMBLEM: logoDarkUrl,
   // Icon / Light Mark Logo
-  ICON_MARK: logoIconUrl
+  ICON_MARK: logoIconUrl,
+  // High-Resolution Professional Portrait with sleek Studio Background
+  PORTRAIT: portraitUrl,
+  PORTRAIT_LUXURY: portraitLuxuryUrl,
+  // Avatar Headshot
+  AVATAR: avatarUrl
 };
 
 // --- PERSONAL & CONTACT DETAILS ---
@@ -30,21 +38,18 @@ export const AUSBERT_CONFIG = {
   LOCATION: "Tamale, Ghana",
   
   // Your Email Address (Where form messages will be sent if using Web3Forms or direct mail)
-  // REPLACE "YOUR_EMAIL_HERE@example.com" with your real email (e.g. ausbertbiiwagnamdarlaari@gmail.com)
   AUSBERT_EMAIL: "ausbertbiiwagnamdarlaari@gmail.com",
   
   // Your Phone / WhatsApp Number with country code (e.g., +233500000000)
-  // REPLACE with your real phone number!
   AUSBERT_WHATSAPP: "+233240596227",
   AUSBERT_PHONE_DISPLAY: "+233 (0) 24 059 6227",
   
-  // Web3Forms Free API Key (Get a free key instantly at https://web3forms.com by entering your email)
-  // Once pasted here, messages submitted on the website will land directly in your email inbox!
+  // Web3Forms Free API Key
   WEB3FORMS_ACCESS_KEY: "YOUR_WEB3FORMS_ACCESS_KEY_HERE",
 
   // Profile Avatar / Portrait Image URL
-  // Leave empty to display the styled professional portrait placeholder
-  PROFILE_IMAGE_URL: "",
+  PROFILE_IMAGE_URL: portraitUrl,
+  AVATAR_IMAGE_URL: avatarUrl,
 
   // Hero Section Wording
   HERO_HEADLINE: "Helping Businesses Look Better, Get Noticed & Grow Online.",
