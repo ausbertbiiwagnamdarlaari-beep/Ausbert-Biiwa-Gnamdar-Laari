@@ -39,8 +39,9 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Intro Greeting Note */}
-            <div className="text-amber-400 font-semibold text-lg sm:text-xl tracking-tight">
-              Hi, I'm {AUSBERT_CONFIG.NAME}
+            <div className="font-display text-amber-400 font-bold text-lg sm:text-2xl tracking-tight flex items-center justify-center lg:justify-start gap-2">
+              <span className="w-6 h-[2px] bg-amber-400/60 inline-block"></span>
+              <span>Hi, I'm {AUSBERT_CONFIG.NAME}</span>
             </div>
 
             {/* Headline */}
