@@ -38,6 +38,11 @@ export const Hero: React.FC = () => {
               <span className="text-amber-400/90 font-medium">Available for Business Projects</span>
             </div>
 
+            {/* Intro Greeting Note */}
+            <div className="text-amber-400 font-semibold text-lg sm:text-xl tracking-tight">
+              Hi, I'm {AUSBERT_CONFIG.NAME}
+            </div>
+
             {/* Headline */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15]">
               {AUSBERT_CONFIG.HERO_HEADLINE}
