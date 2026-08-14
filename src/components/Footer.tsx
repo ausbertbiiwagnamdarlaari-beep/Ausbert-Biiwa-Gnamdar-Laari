@@ -1,12 +1,8 @@
 import React from 'react';
 import { AUSBERT_CONFIG, SOCIAL_LINKS, BRAND_LOGOS } from '../config';
-import { MessageCircle, Facebook, Instagram, Linkedin, HelpCircle, ArrowUp } from 'lucide-react';
+import { MessageCircle, Facebook, Instagram, Linkedin, ArrowUp } from 'lucide-react';
 
-interface FooterProps {
-  onOpenGuide: () => void;
-}
-
-export const Footer: React.FC<FooterProps> = ({ onOpenGuide }) => {
+export const Footer: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -103,7 +99,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenGuide }) => {
 
         </div>
 
-        {/* Bottom copyright & customization guide launcher */}
+        {/* Bottom copyright & back to top button */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           
           <p className="text-slate-400 text-center sm:text-left">
@@ -111,14 +107,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenGuide }) => {
           </p>
 
           <div className="flex items-center gap-4">
-            <button
-              onClick={onOpenGuide}
-              className="text-amber-400 hover:text-amber-300 font-semibold flex items-center gap-1 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800"
-            >
-              <HelpCircle className="w-3.5 h-3.5" />
-              <span>How to Customize Website</span>
-            </button>
-
             <button
               onClick={scrollToTop}
               className="p-2 bg-slate-900 hover:bg-slate-800 text-slate-300 rounded-lg border border-slate-800 transition-colors"

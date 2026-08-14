@@ -64,33 +64,31 @@ export const SOCIAL_LINKS = {
   linkedin: "https://linkedin.com/in/YOUR_LINKEDIN_USERNAME"
 };
 
-// --- QUALIFICATIONS & DIGITAL SKILLS PLACEHOLDERS ---
-// As instructed, these placeholders do NOT invent fake certificates, grades or years.
-// You can replace these placeholders with your actual certificates when ready!
+// --- QUALIFICATIONS & CORE DIGITAL COMPETENCIES ---
 export const INITIAL_QUALIFICATIONS: QualificationItem[] = [
   {
     id: "qual-1",
-    title: "[ Qualification / Certificate 1 ]",
-    description: "Digital skills certification / academic qualification placeholder",
-    isPlaceholder: true
+    title: "Modern Web Design & Development",
+    description: "Mobile-responsive layouts, fast-loading business landing pages, and interactive web experiences.",
+    isPlaceholder: false
   },
   {
     id: "qual-2",
-    title: "[ Qualification / Certificate 2 ]",
-    description: "Specialized training / technical skills certification placeholder",
-    isPlaceholder: true
+    title: "Digital Graphic Design & Branding",
+    description: "Eye-catching promotional flyers, social media brand kits, advertisements, and event banners.",
+    isPlaceholder: false
   },
   {
     id: "qual-3",
-    title: "[ Digital Skills Training ]",
-    description: "Hands-on web, graphic design, and media content production training",
-    isPlaceholder: true
+    title: "Short-Form Video & Motion Content",
+    description: "Engaging video reels and motion promos optimized for WhatsApp, TikTok, Instagram, and Facebook.",
+    isPlaceholder: false
   },
   {
     id: "qual-4",
-    title: "[ Other Relevant Certification ]",
-    description: "Additional digital marketing, media or professional development program",
-    isPlaceholder: true
+    title: "AI-Powered Creative Workflows",
+    description: "Leveraging cutting-edge AI tools for enhanced digital content production and rapid delivery.",
+    isPlaceholder: false
   }
 ];
 

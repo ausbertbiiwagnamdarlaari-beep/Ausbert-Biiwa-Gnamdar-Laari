@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { AUSBERT_CONFIG, BRAND_LOGOS } from '../config';
-import { Menu, X, ArrowUpRight, HelpCircle, Code } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 
-interface NavbarProps {
-  onOpenGuide: () => void;
-}
-
-export const Navbar: React.FC<NavbarProps> = ({ onOpenGuide }) => {
+export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -90,15 +86,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGuide }) => {
 
           {/* Right Action Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <button
-              onClick={onOpenGuide}
-              className="flex items-center gap-1.5 text-slate-300 hover:text-amber-300 text-xs font-semibold px-3 py-2 rounded-lg bg-slate-800/80 border border-slate-700 hover:border-amber-500/40 transition-all"
-              title="Click to see how to customize this website"
-            >
-              <HelpCircle className="w-4 h-4 text-amber-400" />
-              <span>Customize Guide</span>
-            </button>
-
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
@@ -111,14 +98,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGuide }) => {
 
           {/* Mobile Hamburger Button */}
           <div className="flex md:hidden items-center gap-2">
-            <button
-              onClick={onOpenGuide}
-              className="p-2 text-amber-400 bg-slate-800 border border-slate-700 rounded-lg text-xs"
-              title="Customization Guide"
-            >
-              <Code className="w-5 h-5" />
-            </button>
-
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 text-slate-300 hover:text-white bg-slate-800 border border-slate-700 rounded-lg focus:outline-none"
@@ -142,17 +121,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGuide }) => {
                 {link.name}
               </a>
             ))}
-            <div className="pt-3 border-t border-slate-800/80 px-2 space-y-2">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenGuide();
-                }}
-                className="w-full flex items-center justify-center gap-2 bg-slate-800 border border-slate-700 text-amber-300 font-medium text-sm py-2.5 rounded-xl"
-              >
-                <HelpCircle className="w-4 h-4 text-amber-400" />
-                <span>How to Customize Website</span>
-              </button>
+            <div className="pt-3 border-t border-slate-800/80 px-2">
               <a
                 href="#contact"
                 onClick={(e) => handleNavClick(e, '#contact')}

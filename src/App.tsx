@@ -8,11 +8,9 @@ import { WhyWorkWithMe } from './components/WhyWorkWithMe';
 import { CallToAction } from './components/CallToAction';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
-import { CustomizationGuideModal } from './components/CustomizationGuideModal';
 import { ServiceCategory } from './types';
 
 export default function App() {
-  const [guideModalOpen, setGuideModalOpen] = useState(false);
   const [preselectedService, setPreselectedService] = useState<ServiceCategory | null>(null);
 
   const handleSelectService = (serviceName: ServiceCategory) => {
@@ -22,12 +20,12 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-amber-500 selection:text-slate-950">
       {/* Sticky Top Navigation */}
-      <Navbar onOpenGuide={() => setGuideModalOpen(true)} />
+      <Navbar />
 
       {/* Main Single Page Sections */}
       <main>
         <Hero />
-        <About onOpenGuide={() => setGuideModalOpen(true)} />
+        <About />
         <Services onSelectService={handleSelectService} />
         <Portfolio />
         <WhyWorkWithMe />
@@ -36,13 +34,7 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <Footer onOpenGuide={() => setGuideModalOpen(true)} />
-
-      {/* Customization Developer Guide Modal */}
-      <CustomizationGuideModal
-        isOpen={guideModalOpen}
-        onClose={() => setGuideModalOpen(false)}
-      />
+      <Footer />
     </div>
   );
 }
