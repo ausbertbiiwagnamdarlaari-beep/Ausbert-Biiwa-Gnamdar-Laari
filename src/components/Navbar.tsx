@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { AUSBERT_CONFIG } from '../config';
+import { AUSBERT_CONFIG, BRAND_LOGOS } from '../config';
 import { Menu, X, ArrowUpRight, HelpCircle, Code } from 'lucide-react';
 
 interface NavbarProps {
@@ -56,14 +56,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGuide }) => {
             onClick={(e) => handleNavClick(e, '#hero')}
             className="flex items-center gap-3 group"
           >
-            <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold text-xl group-hover:bg-amber-500 group-hover:text-slate-950 transition-all duration-300 shadow-sm">
-              AG
+            <div className="w-11 h-11 rounded-full p-0.5 bg-gradient-to-tr from-amber-500 via-cyan-500 to-amber-400 shadow-md shadow-amber-500/10 group-hover:shadow-amber-500/30 transition-all duration-300 overflow-hidden flex-shrink-0">
+              <img
+                src={BRAND_LOGOS.DARK_EMBLEM}
+                alt="Ausbert Biiwa Gnamdar Laari Logo"
+                className="w-full h-full object-cover rounded-full transform group-hover:scale-105 transition-transform duration-300"
+                referrerPolicy="no-referrer"
+              />
             </div>
             <div>
-              <span className="text-slate-100 font-bold text-lg tracking-tight block leading-tight">
+              <span className="text-slate-100 font-bold text-base sm:text-lg tracking-tight block leading-tight">
                 {AUSBERT_CONFIG.NAME}
               </span>
-              <span className="text-amber-400/90 text-xs font-medium tracking-wider uppercase block">
+              <span className="text-amber-400/90 text-[11px] sm:text-xs font-semibold tracking-wider uppercase block">
                 {AUSBERT_CONFIG.LOCATION}
               </span>
             </div>

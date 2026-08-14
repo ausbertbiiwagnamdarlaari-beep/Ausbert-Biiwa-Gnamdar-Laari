@@ -1,5 +1,5 @@
 import React from 'react';
-import { AUSBERT_CONFIG, SOCIAL_LINKS } from '../config';
+import { AUSBERT_CONFIG, SOCIAL_LINKS, BRAND_LOGOS } from '../config';
 import { MessageCircle, Facebook, Instagram, Linkedin, HelpCircle, ArrowUp } from 'lucide-react';
 
 interface FooterProps {
@@ -26,13 +26,23 @@ export const Footer: React.FC<FooterProps> = ({ onOpenGuide }) => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-800/80">
           
           {/* Brand & Location */}
-          <div className="text-center md:text-left space-y-1">
-            <h3 className="text-white font-extrabold text-lg tracking-tight">
-              {AUSBERT_CONFIG.NAME}
-            </h3>
-            <p className="text-xs text-slate-400">
-              {AUSBERT_CONFIG.TITLE} • Based in {AUSBERT_CONFIG.LOCATION}
-            </p>
+          <div className="flex items-center gap-3 text-center md:text-left">
+            <div className="w-12 h-12 rounded-full p-0.5 bg-gradient-to-tr from-amber-500 via-cyan-500 to-amber-400 overflow-hidden shrink-0 shadow-md">
+              <img
+                src={BRAND_LOGOS.DARK_EMBLEM}
+                alt="Ausbert Biiwa Gnamdar Laari Logo"
+                className="w-full h-full object-cover rounded-full"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="space-y-0.5">
+              <h3 className="text-white font-extrabold text-base sm:text-lg tracking-tight">
+                {AUSBERT_CONFIG.NAME}
+              </h3>
+              <p className="text-xs text-slate-400">
+                {AUSBERT_CONFIG.TITLE} • Based in {AUSBERT_CONFIG.LOCATION}
+              </p>
+            </div>
           </div>
 
           {/* Nav Links */}

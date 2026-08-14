@@ -1,4 +1,6 @@
 import { ServiceItem, PortfolioItem, QualificationItem } from './types';
+import logoDarkUrl from './assets/images/ausbert_logo_dark_1786629083487.jpg';
+import logoIconUrl from './assets/images/ausbert_logo_icon_1786629099891.jpg';
 
 /**
  * =========================================================================
@@ -7,6 +9,14 @@ import { ServiceItem, PortfolioItem, QualificationItem } from './types';
  * Replace placeholder values below with your actual details.
  * All areas marked with comments are easy to customize!
  */
+
+// --- BRAND LOGO ASSETS ---
+export const BRAND_LOGOS = {
+  // Official Dark Emblem Logo
+  DARK_EMBLEM: logoDarkUrl,
+  // Icon / Light Mark Logo
+  ICON_MARK: logoIconUrl
+};
 
 // --- PERSONAL & CONTACT DETAILS ---
 export const AUSBERT_CONFIG = {

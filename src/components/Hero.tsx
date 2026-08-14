@@ -1,6 +1,6 @@
 import React from 'react';
-import { AUSBERT_CONFIG } from '../config';
-import { MapPin, ArrowDown, Sparkles, CheckCircle2, MessageCircle } from 'lucide-react';
+import { AUSBERT_CONFIG, BRAND_LOGOS } from '../config';
+import { MapPin, ArrowDown, Sparkles, CheckCircle2, MessageCircle, ShieldCheck } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -94,36 +94,30 @@ export const Hero: React.FC = () => {
               {/* Main Card Container */}
               <div className="relative bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-2xl space-y-6">
                 
-                {/* Portrait Placeholder Frame */}
-                <div className="relative aspect-4/3 sm:aspect-square rounded-xl bg-slate-950 border border-slate-800 overflow-hidden flex flex-col items-center justify-center group">
+                {/* Official Brand Logo / Profile Frame */}
+                <div className="relative aspect-square rounded-2xl bg-slate-950 border border-slate-800 overflow-hidden flex flex-col items-center justify-center group shadow-xl">
                   {AUSBERT_CONFIG.PROFILE_IMAGE_URL ? (
                     <img
                       src={AUSBERT_CONFIG.PROFILE_IMAGE_URL}
                       alt={AUSBERT_CONFIG.NAME}
                       className="w-full h-full object-cover"
+                      referrerPolicy="no-referrer"
                     />
                   ) : (
-                    <div className="inset-0 w-full h-full p-6 flex flex-col items-center justify-center text-center bg-gradient-to-b from-slate-900 to-slate-950">
-                      {/* Stylized Initials Avatar Frame */}
-                      <div className="w-24 h-24 rounded-2xl bg-amber-500/10 border-2 border-amber-500/40 flex items-center justify-center text-amber-400 font-extrabold text-3xl mb-3 shadow-lg group-hover:scale-105 transition-transform duration-300">
-                        AB
-                      </div>
-                      <span className="text-white font-bold text-base">{AUSBERT_CONFIG.NAME}</span>
-                      <span className="text-amber-400 text-xs font-semibold tracking-wide uppercase mt-0.5">
-                        {AUSBERT_CONFIG.TITLE}
-                      </span>
-                      <span className="mt-3 text-xs text-slate-400 bg-slate-900 px-3 py-1 rounded-full border border-slate-800">
-                        📍 {AUSBERT_CONFIG.LOCATION}
-                      </span>
-                      <p className="text-[11px] text-slate-300 mt-2 italic">
-                        (Photo placeholder — easy to replace with profile picture)
-                      </p>
+                    <div className="relative inset-0 w-full h-full p-2 flex flex-col items-center justify-center bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950">
+                      <img
+                        src={BRAND_LOGOS.DARK_EMBLEM}
+                        alt="Ausbert Biiwa Gnamdar Laari Official Logo"
+                        className="w-full h-full object-contain rounded-xl transform group-hover:scale-105 transition-transform duration-500"
+                        referrerPolicy="no-referrer"
+                      />
                     </div>
                   )}
 
                   {/* Creative Badge Tag */}
-                  <div className="absolute bottom-3 right-3 bg-slate-950/90 backdrop-blur-md border border-slate-800 text-amber-400 text-[11px] font-bold px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-md">
-                    <Sparkles className="w-3 h-3 text-amber-400" /> Digital Creative
+                  <div className="absolute bottom-3 right-3 bg-slate-950/90 backdrop-blur-md border border-slate-800 text-amber-400 text-[11px] font-bold px-3 py-1 rounded-lg flex items-center gap-1.5 shadow-lg">
+                    <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
+                    <span>Official Brand Logo</span>
                   </div>
                 </div>
 
